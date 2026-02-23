@@ -33,7 +33,7 @@ public class ProductDaoHibernateImpl {
                     .setParameter("min", min)
                     .list();
         } catch (Exception e) {
-            throw new RuntimeException("Error al insertar videojuegos", e);
+            throw new RuntimeException("Error al insertar productos", e);
         }
         return products;
     }
@@ -47,7 +47,7 @@ public class ProductDaoHibernateImpl {
                     .setParameter("max", max)
                     .list();
         } catch (Exception e) {
-            throw new RuntimeException("Error al insertar videojuegos", e);
+            throw new RuntimeException("Error al insertar productos", e);
         }
         return products;
     }

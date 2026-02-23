@@ -13,8 +13,8 @@ public class ProductsService {
         return ImporterService.getInstance().readFromCSV(fileName);
     }
 
-    public void insertProducts(List<Product> videojuegos) {
-        dao.insertAll(videojuegos);
+    public void insertProducts(List<Product> products) {
+        dao.insertAll(products);
     }
 
     public List<Product> findLowStock(Integer stock) {
