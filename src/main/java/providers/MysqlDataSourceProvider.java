@@ -1,4 +1,4 @@
-package utils.providers;
+package providers;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
 

@@ -1,4 +1,4 @@
-package utils.providers;
+package providers;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
