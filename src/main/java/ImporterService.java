@@ -4,17 +4,16 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class importerService {
-    private static importerService INSTANCE;
+public class ImporterService {
+    private static ImporterService INSTANCE;
 
-    private importerService() {} // Singleton
+    private ImporterService() {} // Singleton
 
-    public static importerService getInstance() {
+    public static ImporterService getInstance() {
         if (INSTANCE == null) {
-            INSTANCE = new importerService();
+            INSTANCE = new ImporterService();
         }
         return INSTANCE;
     }
