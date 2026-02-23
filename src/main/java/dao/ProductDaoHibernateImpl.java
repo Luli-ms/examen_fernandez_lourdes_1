@@ -4,7 +4,6 @@ import models.Product;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import providers.SessionProvider;
-
 import java.util.List;
 
 public class ProductDaoHibernateImpl {
@@ -26,21 +25,30 @@ public class ProductDaoHibernateImpl {
         return salida;
     }
 
-    public List<Product> findLowStock(Integer min) {
+    public List<Product> getAllProductsByStockLesserThan(Integer min) {
+        List<Product> products;
         try (Session session = SessionProvider.getSessionFactory().openSession()) {
-
+            products = session
+                    .createQuery("from Product where stock<:min", Product.class)
+                    .setParameter("min", min)
+                    .list();
         } catch (Exception e) {
             throw new RuntimeException("Error al insertar videojuegos", e);
         }
-        return null;
+        return products;
     }
 
-    public List<Product> findIn(Double min, Double max) {
+    public List<Product> getAllProductsByPrecioBetween(Double min, Double max) {
+        List<Product> products;
         try (Session session = SessionProvider.getSessionFactory().openSession()) {
-
+            products = session
+                    .createQuery("from Product where precio>:min and precio<:max", Product.class)
+                    .setParameter("min", min)
+                    .setParameter("max", max)
+                    .list();
         } catch (Exception e) {
             throw new RuntimeException("Error al insertar videojuegos", e);
         }
-        return null;
+        return products;
     }
 }
